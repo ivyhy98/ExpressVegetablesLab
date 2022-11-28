@@ -10,7 +10,7 @@ class Index extends React.Component {
           <a href="/fruits">Fruits</a>
         </h2>
         <h2>
-          <a href="/vegetables">Fruits</a>
+          <a href="/vegetables">Vegetables</a>
         </h2>
       </div>
     );
