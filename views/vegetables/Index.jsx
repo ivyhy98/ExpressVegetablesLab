@@ -5,7 +5,7 @@ class Index extends React.Component{
     render(){
         const vegetables = this.props.vegetables;
         return (
-          <DefaultLayout title="Vegetables Index PAge">
+          <DefaultLayout title="Vegetables Index Page">
             <ul>
               {vegetables.map((veggie, i) => {
                 return (

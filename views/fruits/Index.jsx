@@ -4,6 +4,7 @@ const DefaultLayout = require('../layout/Default');
 class Index extends React.Component{
     render(){
         const {fruits} = this.props;
+        const capital = (str) => str.charAt(0).toUpperCase() + str.slice(1);
         return(
             <DefaultLayout title={"Fruits Index Page"}>
                 <ul>
@@ -12,11 +13,12 @@ class Index extends React.Component{
                         return (
                           <li key={i}>
                             The{" "}
-                            <a href={`/fruits/${fruit._id}`}>{fruit.name}</a>
+                            <a href={`/fruits/${fruit._id}`}>{capital(fruit.name)} {" "}</a> <br />
                             <a href={`/fruits/${fruit._id}/edit`}>Edit this fruit</a>
                             <form action={`/fruits/${fruit._id}?_method=DELETE`} method="POST">
                               <input type="submit" value="DELETE" />
                             </form>
+                            <br />
                           </li>
                         );
                     })

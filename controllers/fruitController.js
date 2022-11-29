@@ -2,6 +2,29 @@ const express = require('express');
 const router = express.Router();
 const Fruit = require("../models/fruits");
 
+//Seed Route
+router.get('/seed',(req,res)=>{
+  Fruit.create([
+    {
+      name: 'grapefruit',
+      color: 'pink',
+      readyToEat: true
+    },
+    {
+      name: 'pineapple',
+      color: 'yellow',
+      readyToEat: true
+    },
+    {
+      name: 'kiwi',
+      color: 'green',
+      readyToEat: false
+    },
+  ],(err, data)=>{
+    res.redirect('/fruits')
+  });
+});
+
 
 //Index
 router.get("/", (req, res) => {
